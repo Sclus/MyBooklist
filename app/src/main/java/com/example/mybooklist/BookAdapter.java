@@ -1,7 +1,6 @@
 package com.example.mybooklist;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +22,10 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent){
+    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
         Book book = getItem(position);
 
-        if (view == null){
+        if (view == null) {
             view = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
@@ -39,10 +38,12 @@ public class BookAdapter extends ArrayAdapter<Book> {
         bookTitle.setText(book.getTitle());
         bookOwned.setText(String.valueOf(book.getOwned()));
         bookAvailable.setText(String.valueOf(book.getAvailable()));
+        CardView bookCard = view.findViewById(R.id.bookCard);
 
-        if (book.getMissing() != null && !book.getMissing().isBlank()){
-            CardView bookCard = view.findViewById(R.id.bookCard);
-            bookCard.setCardBackgroundColor(Color.rgb(120,50,50));
+        if (book.getMissing() != null && !book.getMissing().isBlank()) {
+            bookCard.setCardBackgroundColor(Color.rgb(120, 50, 50));
+        } else {
+            bookCard.setCardBackgroundColor(Color.rgb(65, 65, 65));
         }
 
         return view;

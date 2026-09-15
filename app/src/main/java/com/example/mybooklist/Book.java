@@ -1,6 +1,8 @@
 package com.example.mybooklist;
 
 
+import androidx.annotation.NonNull;
+
 public class Book {
 
     private String title;
@@ -53,5 +55,16 @@ public class Book {
 
     public void setAvailable(int available) {
         this.available = available;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", owned=" + owned +
+                ", missing='" + missing + '\'' +
+                ", available=" + available +
+                '}';
     }
 }

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 view -> {
                     Intent intent = new Intent(MainActivity.this, DetailedActivity.class);
                     intent.putExtra("exists", false);
-                    intent.putExtra("title", "New Book");
+                    intent.putExtra("title", "NewBook");
                     startActivity(intent);
                 }
         );
