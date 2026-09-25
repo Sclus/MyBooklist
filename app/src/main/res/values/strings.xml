@@ -9,5 +9,7 @@
     <string name="save">Save</string>
     <string name="back">Back</string>
     <string name="delete">delete</string>
+    <string name="export_missing_books">Export missing books</string>
+    <string name="export_owned_books">Export owned books</string>
 
 </resources>

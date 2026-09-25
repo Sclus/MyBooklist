@@ -5,16 +5,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginVertical="24sp"
+    android:layout_marginBottom="24sp"
     tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.MaterialComponents.Toolbar.Surface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:menu="@menu/top_app_bar"
+        app:title="@string/app_name" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="80dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="10.0sp"
+        android:paddingTop="8dp"
         android:scrollbars="vertical"
         app:layout_anchor="@+id/listView"
         app:layout_anchorGravity="bottom"
@@ -27,8 +37,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/material_dynamic_neutral50"
         android:alpha="0.70"
+        android:backgroundTint="@color/material_dynamic_neutral50"
         android:contentDescription="@string/add_new_book"
         app:srcCompat="@android:drawable/ic_input_add" />
 

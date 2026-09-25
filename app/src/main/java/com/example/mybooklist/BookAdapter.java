@@ -40,7 +40,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
         bookAvailable.setText(String.valueOf(book.getAvailable()));
         CardView bookCard = view.findViewById(R.id.bookCard);
 
-        if (book.getMissing() != null && !book.getMissing().isBlank()) {
+        if (book.hasMissing()) {
             bookCard.setCardBackgroundColor(Color.rgb(120, 50, 50));
         } else {
             bookCard.setCardBackgroundColor(Color.rgb(65, 65, 65));

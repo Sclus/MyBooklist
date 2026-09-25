@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/exportOwned"
+        android:contentDescription="@string/export_owned_books"
+        android:title="@string/export_owned_books"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/exportMissing"
+        android:contentDescription="@string/export_missing_books"
+        android:title="@string/export_missing_books"
+        app:showAsAction="never" />
+
+</menu>

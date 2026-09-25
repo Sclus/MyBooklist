@@ -57,6 +57,14 @@ public class Book {
         this.available = available;
     }
 
+    public boolean hasMissing() {
+        return missing != null && !missing.isBlank();
+    }
+
+    public boolean isMaxOwned() {
+        return getOwned() == getAvailable();
+    }
+
     @NonNull
     @Override
     public String toString() {
