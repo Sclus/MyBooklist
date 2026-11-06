@@ -10,6 +10,8 @@ import android.util.Log;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mybooklist.book.Book;
+import com.example.mybooklist.book.BookAdapter;
 import com.example.mybooklist.database.FeedReaderDbHelper;
 import com.example.mybooklist.databinding.ActivityMainBinding;
 import com.example.mybooklist.export.Export;
@@ -33,16 +35,13 @@ public class MainActivity extends AppCompatActivity {
         }
         BookAdapter bookAdapter = new BookAdapter(MainActivity.this, this.books);
 
-        binding.listView.setAdapter(bookAdapter);
-        binding.listView.setClickable(true);
+        binding.bookListView.setAdapter(bookAdapter);
+        binding.bookListView.setClickable(true);
 
-        binding.listView.setOnItemClickListener((adapterView, view, i, l) -> {
+        binding.bookListView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(MainActivity.this, DetailedActivity.class);
             intent.putExtra("exists", true);
-            intent.putExtra("title", books.get(i).getTitle());
-            intent.putExtra("owned", String.valueOf(books.get(i).getOwned()));
-            intent.putExtra("missing", books.get(i).getMissing());
-            intent.putExtra("available", String.valueOf(books.get(i).getAvailable()));
+            intent.putExtra("book", books.get(i));
             startActivity(intent);
         });
 
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 view -> {
                     Intent intent = new Intent(MainActivity.this, DetailedActivity.class);
                     intent.putExtra("exists", false);
-                    intent.putExtra("title", "NewBook");
+                    intent.putExtra("book", new Book("NewBook"));
                     startActivity(intent);
                 }
         );
@@ -74,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
     private void copyToClipboard(ClipData clipData) {
         ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         clipboardManager.setPrimaryClip(clipData);
-
     }
 
 

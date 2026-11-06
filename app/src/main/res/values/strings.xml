@@ -11,5 +11,10 @@
     <string name="delete">delete</string>
     <string name="export_missing_books">Export missing books</string>
     <string name="export_owned_books">Export owned books</string>
+    <string name="next_releases">Next releases</string>
+    <string name="add_release_date">Add release date</string>
+    <string name="number_template">XX</string>
+    <string name="date_template">DD/MM/YYYY</string>
+    <string name="book_title">Book Title</string>
 
 </resources>

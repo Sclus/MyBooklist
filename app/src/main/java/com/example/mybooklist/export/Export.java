@@ -2,7 +2,7 @@ package com.example.mybooklist.export;
 
 import android.content.ClipData;
 
-import com.example.mybooklist.Book;
+import com.example.mybooklist.book.Book;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +45,7 @@ public class Export {
             }
             if (!book.isMaxOwned()) {
                 for (int i = book.getOwned(); i < book.getAvailable(); i++) {
-                    missingNo.add(i);
+                    missingNo.add(i + 1);
                 }
             }
 

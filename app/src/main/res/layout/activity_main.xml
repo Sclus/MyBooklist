@@ -18,7 +18,7 @@
         app:title="@string/app_name" />
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/book_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
@@ -26,7 +26,7 @@
         android:dividerHeight="10.0sp"
         android:paddingTop="8dp"
         android:scrollbars="vertical"
-        app:layout_anchor="@+id/listView"
+        app:layout_anchor="@+id/book_list_view"
         app:layout_anchorGravity="bottom"
         tools:listitem="@layout/list_item" />
 
